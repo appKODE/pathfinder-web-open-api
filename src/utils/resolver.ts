@@ -1,11 +1,11 @@
-import { UrlSpec } from "@kode-frontend/pathfinder-web-core";
-import { ParseResult } from "../types";
-import { isOpenApiSpec, isOperationType } from "./validators";
-import { operationMap } from "./utils";
+import { UrlSpec } from '@kode-frontend/pathfinder-web-core';
+import { ParseResult } from '../types';
+import { isOpenApiSpec, isOperationType } from './validators';
+import { operationMap } from './utils';
 
 export function parseJSON(json: unknown): ParseResult {
   if (!isOpenApiSpec(json)) {
-    throw new Error("parse error");
+    throw new Error('parse error');
   }
 
   const urls: UrlSpec[] = [];
