@@ -1,4 +1,4 @@
-import { openApiResolver } from "./lib";
+import { openApiResolver } from './lib';
 
 export {
   ContentType,
@@ -17,7 +17,7 @@ export {
   RequestBody,
   Schema,
   Server,
-} from "./types";
+} from './types';
 
 export { openApiResolver };
 

@@ -1,27 +1,27 @@
-import { EnvSpec, UrlSpec } from "@kode-frontend/pathfinder-web-core";
+import { EnvSpec, UrlSpec } from '@kode-frontend/pathfinder-web-core';
 
 export type QueryParameter = {
   schema: Schema;
-  in: "query";
+  in: 'query';
   name: string;
 };
 
 export type PathParameter = {
   schema: Schema;
-  in: "path";
+  in: 'path';
   required: true;
   name: string;
 };
 
 export type HeaderParameter = {
   schema: Schema;
-  in: "header";
+  in: 'header';
   name: string;
 };
 
 export type CookieParameter = {
   schema: Schema;
-  in: "cookie";
+  in: 'cookie';
   name: string;
 };
 
@@ -41,14 +41,14 @@ export interface Paths {
 }
 
 export type OperationType =
-  | "get"
-  | "put"
-  | "post"
-  | "delete"
-  | "options"
-  | "head"
-  | "patch"
-  | "trace";
+  | 'get'
+  | 'put'
+  | 'post'
+  | 'delete'
+  | 'options'
+  | 'head'
+  | 'patch'
+  | 'trace';
 
 export type PathItemOperations = {
   [operation in OperationType]?: Operation;
@@ -70,7 +70,7 @@ export interface Operation {
   deprecated?: boolean;
 }
 
-export type ContentType = "application/json";
+export type ContentType = 'application/json';
 
 export interface RequestBody {
   description?: string;
@@ -97,7 +97,7 @@ export interface Schema {
   minProperties?: number;
   required?: [string, ...string[]];
   enum?: [unknown, ...unknown[]];
-  type?: "array" | "boolean" | "integer" | "number" | "object" | "string";
+  type?: 'array' | 'boolean' | 'integer' | 'number' | 'object' | 'string';
   not?: Schema;
   allOf?: Schema[];
   oneOf?: Schema[];

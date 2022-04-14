@@ -9,7 +9,7 @@ import {
   Paths,
   QueryParameter,
   Server,
-} from "../types";
+} from '../types';
 
 export function isOperationType(val: string): val is OperationType {
   return /^(get|put|post|delete|options|head|patch|trace)$/.test(val);
@@ -29,32 +29,32 @@ export function isCookieParameter(obj: any): obj is CookieParameter {
 }
 
 export function isOperation(obj: any): obj is Operation {
-  if (!obj.hasOwnProperty("operationId") || !obj.hasOwnProperty("summary")) {
+  if (!obj.hasOwnProperty('operationId') || !obj.hasOwnProperty('summary')) {
     return false;
   }
 
   const keys = Object.keys(obj);
   return keys.reduce<boolean>((previous, key) => {
-    if (key === "operationId") {
-      return previous && typeof obj[key] === "string";
+    if (key === 'operationId') {
+      return previous && typeof obj[key] === 'string';
     }
-    if (key === "summary") {
-      return previous && typeof obj[key] === "string";
+    if (key === 'summary') {
+      return previous && typeof obj[key] === 'string';
     }
-    if (key === "tags") {
+    if (key === 'tags') {
       return previous && Array.isArray(obj[key]);
     }
 
-    if (key === "description") {
-      return previous && typeof obj[key] === "string";
+    if (key === 'description') {
+      return previous && typeof obj[key] === 'string';
     }
 
-    if (key === "parameters") {
+    if (key === 'parameters') {
       return previous && isParameter(obj[key]);
     }
 
-    if (key === "deprecated") {
-      return previous && typeof obj[key] === "boolean";
+    if (key === 'deprecated') {
+      return previous && typeof obj[key] === 'boolean';
     }
 
     return previous;
@@ -63,25 +63,25 @@ export function isOperation(obj: any): obj is Operation {
 
 export function isParameter(obj: any): obj is Parameter {
   return (
-    isQueryParameter(obj) ||
-    isPathParameter(obj) ||
-    isHeaderParameter(obj) ||
-    isCookieParameter(obj)
+    isQueryParameter(obj)
+    || isPathParameter(obj)
+    || isHeaderParameter(obj)
+    || isCookieParameter(obj)
   );
 }
 
 export function isPaths(obj: any): obj is Paths {
   const keys = Object.keys(obj);
   return keys.reduce<boolean>((previous, key) => {
-    if (key === "summary") {
-      return previous && typeof obj[key] === "string";
+    if (key === 'summary') {
+      return previous && typeof obj[key] === 'string';
     }
 
-    if (key === "description") {
-      return previous && typeof obj[key] === "string";
+    if (key === 'description') {
+      return previous && typeof obj[key] === 'string';
     }
 
-    if (key === "parameters") {
+    if (key === 'parameters') {
       return previous && isParameter(obj[key]);
     }
 
@@ -95,14 +95,14 @@ export function isPaths(obj: any): obj is Paths {
 
 export function isServers(obj: any): obj is Server[] {
   return (
-    Array.isArray(obj) &&
-    obj.reduce<boolean>((previous, server) => {
-      if (!server.hasOwnProperty("url") || typeof server["url"] !== "string") {
+    Array.isArray(obj)
+    && obj.reduce<boolean>((previous, server) => {
+      if (!server.hasOwnProperty('url') || typeof server['url'] !== 'string') {
         return false;
       }
 
-      if (server.hasOwnProperty("description")) {
-        return previous && typeof server["description"] === "string";
+      if (server.hasOwnProperty('description')) {
+        return previous && typeof server['description'] === 'string';
       }
 
       return previous;
@@ -111,7 +111,7 @@ export function isServers(obj: any): obj is Server[] {
 }
 
 export function isOpenApiSpec(obj: any): obj is OpenApiSpec {
-  const hasServers = obj.hasOwnProperty("servers") && isServers(obj.servers);
-  const hasPaths = obj.hasOwnProperty("paths") && isPaths(obj.paths);
+  const hasServers = obj.hasOwnProperty('servers') && isServers(obj.servers);
+  const hasPaths = obj.hasOwnProperty('paths') && isPaths(obj.paths);
   return hasServers && hasPaths;
 }
