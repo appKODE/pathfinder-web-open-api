@@ -1,6 +1,6 @@
 
 
-## 0.1.0 (2022-04-14)
+### [0.1.1](https://https//github.com/appKODE/pathfinder-web-open-api/compare/v0.1.0...v0.1.1) (2022-04-14)## 0.1.0 (2022-04-14)
 
 
 ### Features
