@@ -1,6 +1,6 @@
 {
   "name": "@kode-frontend/pathfinder-web-open-api",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Open api resolver for pathfinder web",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
