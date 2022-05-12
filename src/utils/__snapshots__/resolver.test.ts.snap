@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots should match 1`] = `
+Object {
+  "envs": Array [
+    Object {
+      "baseUrl": "https://stoplight.io/mocks/kode-hsk/horoshkola-1/6096726",
+      "id": "0",
+      "name": "cloud mock",
+      "queryParams": Object {},
+    },
+    Object {
+      "baseUrl": "http://127.0.0.1:3100",
+      "id": "1",
+      "name": "local mock",
+      "queryParams": Object {},
+    },
+    Object {
+      "baseUrl": "https://dev.horoshkola.ru/api",
+      "id": "2",
+      "name": "dev",
+      "queryParams": Object {},
+    },
+  ],
+  "urls": Array [
+    Object {
+      "id": "post-auth-confirm",
+      "method": "POST",
+      "name": "Подтверждение OTP кода",
+      "tags": Array [
+        "auth",
+      ],
+      "template": "/auth/v1/confirm",
+    },
+  ],
+}
+`;
