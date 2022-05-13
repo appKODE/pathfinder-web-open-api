@@ -55,7 +55,8 @@ export const mockSpec = {
             },
           },
           403: {
-            description: 'attempts amount',
+            description:
+              'attempts amount',
             content: {
               'application/json': {
                 schema: {
