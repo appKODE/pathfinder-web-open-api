@@ -4,19 +4,19 @@ exports[`snapshots should match 1`] = `
 Object {
   "envs": Array [
     Object {
-      "baseUrl": "https://stoplight.io/mocks/kode-hsk/horoshkola-1/6096726",
+      "baseUrl": "https://stoplight.io/mocks/some/sub-some/123123",
       "id": "0",
       "name": "cloud mock",
       "queryParams": Object {},
     },
     Object {
-      "baseUrl": "http://127.0.0.1:3100",
+      "baseUrl": "http://185.0.0.1:3100",
       "id": "1",
       "name": "local mock",
       "queryParams": Object {},
     },
     Object {
-      "baseUrl": "https://dev.horoshkola.ru/api",
+      "baseUrl": "https://some.someweb.com/api",
       "id": "2",
       "name": "dev",
       "queryParams": Object {},
@@ -26,7 +26,7 @@ Object {
     Object {
       "id": "post-auth-confirm",
       "method": "POST",
-      "name": "Подтверждение OTP кода",
+      "name": "verification",
       "tags": Array [
         "auth",
       ],

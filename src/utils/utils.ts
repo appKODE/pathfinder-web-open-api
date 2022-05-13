@@ -12,41 +12,41 @@ export const operationMap = {
 export const mockSpec = {
   servers: [
     {
-      url: 'https://stoplight.io/mocks/kode-hsk/horoshkola-1/6096726',
+      url: 'https://stoplight.io/mocks/some/sub-some/123123',
       description: 'cloud mock',
     },
     {
       description: 'local mock',
-      url: 'http://127.0.0.1:3100',
+      url: 'http://185.0.0.1:3100',
     },
     {
-      url: 'https://dev.horoshkola.ru/api',
+      url: 'https://some.someweb.com/api',
       description: 'dev',
     },
   ],
   paths: {
     '/auth/v1/confirm': {
       post: {
-        summary: 'Подтверждение OTP кода',
+        summary: 'verification',
         operationId: 'post-auth-confirm',
         responses: {
           200: {
-            description: 'Авторизация успешна',
+            description: 'Successful authorization',
             content: {
               'application/json': {
                 schema: {
                   title: 'TokensPair',
                   type: 'object',
-                  description: 'Пара токенов',
+                  description: 'Tokens Pair',
                   properties: {
                     accessToken: {
                       type: 'string',
-                      description: 'Токен доступа',
+                      description: 'Access Token',
                     },
                     refreshToken: {
                       title: 'RefreshToken',
                       type: 'string',
-                      description: 'Токен обновления сессии',
+                      description: 'Refresh Token',
                     },
                   },
                   required: ['accessToken', 'refreshToken'],
@@ -56,7 +56,7 @@ export const mockSpec = {
           },
           403: {
             description:
-              'Количество оставшихся попыток, если otpID существует. Если otpID не существует или попытки кончились - вернется 0.',
+              'attempts amount',
             content: {
               'application/json': {
                 schema: {
@@ -113,12 +113,12 @@ export const mockSpec = {
                   otpID: {
                     type: 'string',
                     title: 'OTPID',
-                    description: 'Идентификатор OTP',
+                    description: 'OTP identifier',
                     format: 'uuid',
                   },
                   otpCode: {
                     type: 'string',
-                    description: 'OTP код',
+                    description: 'OTP code',
                     pattern: '\\d+',
                     minLength: 1,
                   },
